@@ -1,3 +1,4 @@
+// component navbar into all page
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../redux.svg";
@@ -8,6 +9,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // logout function from authslice
   const logout = () => {
     dispatch(LogOut());
     dispatch(reset());

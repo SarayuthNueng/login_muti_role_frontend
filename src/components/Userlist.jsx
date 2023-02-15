@@ -1,3 +1,4 @@
+// component list user page 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -9,11 +10,13 @@ const Userlist = () => {
     getUsers();
   }, []);
 
+  // get all user function
   const getUsers = async () => {
     const response = await axios.get("http://localhost:5000/users");
     setUsers(response.data);
   };
 
+  // delete user function
   const deleteUser = async (userId) => {
     await axios.delete(`http://localhost:5000/users/${userId}`);
     getUsers();
@@ -35,6 +38,7 @@ const Userlist = () => {
           </tr>
         </thead>
         <tbody>
+          {/* use .map for list data */}
           {users.map((user, index) => (
             <tr key={user.uuid}>
               <td>{index + 1}</td>

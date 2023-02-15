@@ -1,3 +1,4 @@
+// component app product for add product page
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +9,7 @@ const FormAddProduct = () => {
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
+  // save product function
   const saveProduct = async(e) => {
     e.preventDefault();
     try{
@@ -15,7 +17,7 @@ const FormAddProduct = () => {
         name : name,
         price : price,
       });
-      navigate("/products");
+      navigate("/products"); //redri to patch here
     } catch (error) {
       if(error.response) {
         setMsg(error.response.data.msg);

@@ -1,8 +1,9 @@
+// component welcome page
 import React from 'react';
 import {useSelector} from "react-redux";
 
 const Welcome = () => {
-  const {user} = useSelector((state) => state.auth);
+  const {user} = useSelector((state) => state.auth); // value user from react-redux
   return (
     <div>
       <h1 className='title'>dashboard</h1>

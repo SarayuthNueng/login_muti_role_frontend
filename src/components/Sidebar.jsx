@@ -1,3 +1,4 @@
+// component sidebar into all page
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoPerson, IoPricetag, IoHome, IoLogOut } from "react-icons/io5";
@@ -7,7 +8,7 @@ import { LogOut, reset } from "../features/authSlice";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth); // value user from react-redux
 
   const logout = () => {
     dispatch(LogOut());

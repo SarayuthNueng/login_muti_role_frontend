@@ -1,3 +1,4 @@
+// component login for login page
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +20,7 @@ const Login = () => {
     dispatch(reset());
   }, [user, isSuccess, dispatch, navigate]);
 
+  // check value from button login
   const Auth = (e) => {
     e.preventDefault();
     dispatch(LoginUser({ email, password }));

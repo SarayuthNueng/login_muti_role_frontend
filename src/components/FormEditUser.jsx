@@ -1,3 +1,4 @@
+// component edit user for edit user page
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,6 +13,7 @@ const FormEditUser = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
+   // list old data before update function
   useEffect(() => {
     const getUserById = async () => {
       try {
@@ -30,6 +32,7 @@ const FormEditUser = () => {
     getUserById();
   }, [id]);
 
+  // update user function
   const updateUser = async (e) => {
     e.preventDefault();
     try {
